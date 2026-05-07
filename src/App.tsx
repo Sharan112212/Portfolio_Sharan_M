@@ -1,5 +1,6 @@
 import { motion, useScroll, useSpring } from "motion/react";
 import { useState } from "react";
+import { CustomCursor } from "./components/ui/CustomCursor";
 import { Hero } from "./components/sections/Hero";
 import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects";
@@ -22,6 +23,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen selection:bg-neon-blue/30 selection:text-black">
+      <CustomCursor />
       {/* 3D Background */}
       <div className="fixed inset-0 z-0">
         <BackgroundCanvas />
