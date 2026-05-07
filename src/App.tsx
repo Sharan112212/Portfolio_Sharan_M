@@ -8,6 +8,7 @@ import { Experience } from "./components/sections/Experience";
 import { Skills } from "./components/sections/Skills";
 import { CyberLab } from "./components/sections/CyberLab";
 import { Contact } from "./components/sections/Contact";
+import { Footer } from "./components/layout/Footer";
 import { Dock } from "./components/navigation/Dock";
 import { DynamicIsland } from "./components/navigation/DynamicIsland";
 import { BackgroundCanvas } from "./components/canvas/BackgroundCanvas";
@@ -49,6 +50,7 @@ export default function App() {
         <CyberLab onVisible={() => setActiveSection("cyberlab")} />
         <Experience onVisible={() => setActiveSection("experience")} />
         <Contact onVisible={() => setActiveSection("contact")} />
+        <Footer />
       </main>
 
       {/* Floating Dock Navigation */}
