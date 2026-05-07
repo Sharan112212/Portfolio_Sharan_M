@@ -3,6 +3,11 @@ import { Section } from "../ui/Section";
 import { ChevronDown, Shield, Cpu, Globe } from "lucide-react";
 
 export function Hero({ onVisible }: { onVisible: () => void }) {
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <Section id="hero" onVisible={onVisible} className="min-h-screen flex flex-col items-center justify-center relative px-6">
       <motion.div
@@ -25,10 +30,16 @@ export function Hero({ onVisible }: { onVisible: () => void }) {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <button className="px-8 py-3 bg-white text-black rounded-full font-medium transition-transform hover:scale-105 active:scale-95">
+          <button 
+            onClick={() => scrollTo('projects')}
+            className="px-8 py-3 bg-white text-black rounded-full font-medium transition-transform hover:scale-105 active:scale-95"
+          >
             View Projects
           </button>
-          <button className="px-8 py-3 glass rounded-full font-medium transition-all hover:bg-white/10">
+          <button 
+            onClick={() => scrollTo('contact')}
+            className="px-8 py-3 glass rounded-full font-medium transition-all hover:bg-white/10"
+          >
             Contact Me
           </button>
         </div>
