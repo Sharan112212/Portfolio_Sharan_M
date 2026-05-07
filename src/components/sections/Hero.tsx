@@ -41,7 +41,12 @@ export function Hero({ onVisible }: { onVisible: () => void }) {
       </div>
 
       <div className="absolute bottom-20 right-12 hidden lg:flex flex-col gap-4">
-        <Widget icon={<Globe className="w-4 h-4" />} title="Location" value="Earth-01" />
+        <Widget 
+          icon={<Globe className="w-4 h-4" />} 
+          title="Location" 
+          value="Earth-01" 
+          onClick={() => window.open("https://www.google.com/maps/place/Chennai,+Tamil+Nadu", "_blank")}
+        />
       </div>
 
       <motion.div
@@ -55,12 +60,15 @@ export function Hero({ onVisible }: { onVisible: () => void }) {
   );
 }
 
-function Widget({ icon, title, value }: { icon: any; title: string; value: string }) {
+function Widget({ icon, title, value, onClick }: { icon: any; title: string; value: string; onClick?: () => void }) {
   return (
     <motion.div 
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
-      className="glass p-4 rounded-3xl min-w-[160px] flex items-center gap-4 border border-white/5"
+      whileHover={onClick ? { scale: 1.05 } : {}}
+      whileTap={onClick ? { scale: 0.95 } : {}}
+      onClick={onClick}
+      className={`glass p-4 rounded-3xl min-w-[160px] flex items-center gap-4 border border-white/5 ${onClick ? 'cursor-pointer hover:bg-white/10' : ''}`}
     >
       <div className="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center text-neon-blue">
         {icon}
