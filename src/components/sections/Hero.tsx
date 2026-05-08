@@ -25,10 +25,16 @@ export function Hero({ onVisible }: { onVisible: () => void }) {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <button className="px-8 py-3 bg-white text-black rounded-full font-medium transition-transform hover:scale-105 active:scale-95">
+          <button 
+            onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+            className="px-8 py-3 bg-white text-black rounded-full font-medium transition-transform hover:scale-105 active:scale-95"
+          >
             View Projects
           </button>
-          <button className="px-8 py-3 glass rounded-full font-medium transition-all hover:bg-white/10">
+          <button 
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            className="px-8 py-3 glass rounded-full font-medium transition-all hover:bg-white/10"
+          >
             Contact Me
           </button>
         </div>

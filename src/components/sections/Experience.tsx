@@ -6,7 +6,7 @@ const experience = [
   {
     type: "education",
     title: "Computer Science & Business Systems",
-    organization: "TCE (Thiagarajar College of Engineering)",
+    organization: "Panimalar Engineering College",
     period: "2022 - Present",
     description: "Specializing in software engineering, business management, and cybersecurity systems.",
     icon: <GraduationCap className="w-5 h-5" />
