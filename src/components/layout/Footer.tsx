@@ -11,8 +11,8 @@ const navLinks = [
 ];
 
 const socials = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/Sharan112212", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/sharan-m-048a91325/", label: "LinkedIn" },
   { icon: Mail, href: "mailto:mail2sharan06@gmail.com", label: "Email" },
 ];
 
@@ -70,6 +70,8 @@ export function Footer() {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-3 glass rounded-2xl hover:bg-white/10 hover:text-neon-blue transition-all group/icon"
                     aria-label={social.label}
                   >

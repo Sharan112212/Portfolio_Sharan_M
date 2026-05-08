@@ -34,9 +34,9 @@ export function Contact({ onVisible }: { onVisible: () => void }) {
           </GlassCard>
 
           <div className="grid grid-cols-3 gap-4">
-             <SocialBtn icon={<Github />} href="#" />
-             <SocialBtn icon={<Linkedin />} href="#" />
-             <SocialBtn icon={<Twitter />} href="#" />
+             <SocialBtn icon={<Github />} href="https://github.com/Sharan112212" />
+             <SocialBtn icon={<Linkedin />} href="https://www.linkedin.com/in/sharan-m-048a91325/" />
+             <SocialBtn icon={<Twitter />} href="https://twitter.com/" />
           </div>
         </div>
 
@@ -79,6 +79,8 @@ function SocialBtn({ icon, href }: { icon: any; href: string }) {
   return (
     <a 
       href={href} 
+      target="_blank"
+      rel="noopener noreferrer"
       className="h-20 glass flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-all rounded-3xl"
     >
       {icon}

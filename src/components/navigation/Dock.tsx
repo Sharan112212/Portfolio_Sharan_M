@@ -40,7 +40,11 @@ function DockItem({ item, activeSection, mouseX }: { item: any; activeSection: s
           : "bg-white/5 text-white/50 hover:bg-white/10 hover:text-white"
       )}
     >
-      <item.icon className="w-[45%] h-[45%] transition-transform group-hover:scale-110" />
+      <item.icon 
+        strokeWidth={1.75} 
+        className="w-[48%] h-[48%] transition-transform group-hover:scale-110 drop-shadow-[0_0_1px_rgba(255,255,255,0.1)]" 
+        style={{ transform: "translateZ(0)" }}
+      />
       
       {/* Premium Tooltip */}
       <span className="absolute -top-14 left-1/2 -translate-x-1/2 px-3 py-1.5 glass-dark rounded-xl text-[11px] font-medium opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap border border-white/5 shadow-2xl scale-50 group-hover:scale-100 origin-bottom">

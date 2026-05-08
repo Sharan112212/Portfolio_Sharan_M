@@ -53,10 +53,20 @@ export function Projects({ onVisible }: { onVisible: () => void }) {
                 {project.icon}
               </div>
               <div className="flex gap-2">
-                <a href={project.github} className="p-2 glass rounded-full hover:bg-white/20 transition-colors">
+                <a 
+                  href="https://github.com/Sharan112212" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 glass rounded-full hover:bg-white/20 transition-colors"
+                >
                   <Github className="w-4 h-4" />
                 </a>
-                <a href={project.link} className="p-2 glass rounded-full hover:bg-white/20 transition-colors">
+                <a 
+                  href={project.link} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 glass rounded-full hover:bg-white/20 transition-colors"
+                >
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
