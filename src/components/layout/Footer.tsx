@@ -93,7 +93,7 @@ export function Footer() {
           <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.2em] font-medium opacity-30">
             <div>© 2026 Sharan. Designed with precision and creativity.</div>
             <div className="flex items-center gap-1.5">
-              Made with <Heart className="w-3 h-3 text-red-500/50" /> in India
+              Made with <Heart className="w-3 h-3 text-red-500" /> in India
             </div>
           </div>
         </motion.div>
