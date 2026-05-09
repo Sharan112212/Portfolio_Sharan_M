@@ -63,15 +63,15 @@ async function startServer() {
       });
 
       if (response.ok) {
-        res.status(200).json({ success: true });
+        return res.status(200).json({ success: true });
       } else {
         const errorData = await response.text();
         console.error("Discord Webhook Error:", errorData);
-        res.status(500).json({ error: "Failed to send message to Discord." });
+        return res.status(500).json({ success: false, error: "Failed to send message to Discord." });
       }
     } catch (error) {
       console.error("Contact Form Error:", error);
-      res.status(500).json({ error: "Internal server error." });
+      return res.status(500).json({ success: false, error: "Internal server error." });
     }
   });
 

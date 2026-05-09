@@ -30,13 +30,20 @@ export function Contact({ onVisible }: { onVisible: () => void }) {
         body: JSON.stringify(formData)
       });
 
-      if (response.ok) {
-        setStatus("success");
-        setFormData({ subject: "", email: "", message: "" });
-        setTimeout(() => setStatus("idle"), 5000);
-      } else {
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
         const data = await response.json();
-        throw new Error(data.error || "Failed to send message.");
+        if (response.ok) {
+          setStatus("success");
+          setFormData({ subject: "", email: "", message: "" });
+          setTimeout(() => setStatus("idle"), 5000);
+        } else {
+          throw new Error(data.error || "Failed to send message.");
+        }
+      } else {
+        const text = await response.text();
+        console.error("Non-JSON response:", text);
+        throw new Error("Server returned an invalid response.");
       }
     } catch (error) {
       setStatus("error");
