@@ -4,6 +4,8 @@ import { Mail, Send, Linkedin, Github, Twitter, MapPin, Loader2, CheckCircle2, A
 import { useState } from "react";
 
 export function Contact({ onVisible }: { onVisible: () => void }) {
+  // Persistence touch
+
   const [formData, setFormData] = useState({
     subject: "",
     email: "",
