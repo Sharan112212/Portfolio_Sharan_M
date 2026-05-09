@@ -1,14 +1,15 @@
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import { User, Code, Briefcase, Shield, Mail, GraduationCap } from "lucide-react";
+import { User, Code, Briefcase, Shield, Mail, GraduationCap, Award } from "lucide-react";
 import { useRef } from "react";
 import { cn } from "../../lib/utils";
 
 const items = [
   { id: "about", icon: User, label: "About" },
   { id: "skills", icon: Code, label: "Skills" },
-  { id: "projects", icon: Briefcase, label: "Projects" },
   { id: "cyberlab", icon: Shield, label: "Lab" },
   { id: "experience", icon: GraduationCap, label: "Experience" },
+  { id: "projects", icon: Briefcase, label: "Projects" },
+  { id: "certificates", icon: Award, label: "Credentials" },
   { id: "contact", icon: Mail, label: "Contact" },
 ];
 
