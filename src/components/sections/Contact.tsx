@@ -19,7 +19,7 @@ export function Contact({ onVisible }: { onVisible: () => void }) {
             </div>
             <div>
               <div className="text-[10px] uppercase tracking-widest font-bold opacity-40">Email</div>
-              <div className="text-sm font-medium">mail2sharan06@gmail.com</div>
+              <div className="text-sm font-medium">justsharan0822@gmail.com</div>
             </div>
           </GlassCard>
 

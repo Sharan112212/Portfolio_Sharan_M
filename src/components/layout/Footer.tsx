@@ -13,7 +13,7 @@ const navLinks = [
 const socials = [
   { icon: Github, href: "https://github.com/Sharan112212", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/sharan-m-048a91325/", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:mail2sharan06@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:justsharan0822@gmail.com", label: "Email" },
 ];
 
 export function Footer() {
