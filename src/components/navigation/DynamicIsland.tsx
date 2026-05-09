@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { Terminal, Shield, User, Code, Briefcase, Mail, Award } from "lucide-react";
+import { Terminal, Shield, User, Code, Briefcase, Mail } from "lucide-react";
 
 interface DynamicIslandProps {
   activeSection: string;
@@ -12,7 +12,6 @@ export function DynamicIsland({ activeSection }: DynamicIslandProps) {
       case "about": return <User className="w-4 h-4" />;
       case "skills": return <Code className="w-4 h-4" />;
       case "projects": return <Briefcase className="w-4 h-4" />;
-      case "certificates": return <Award className="w-4 h-4" />;
       case "cyberlab": return <Shield className="w-4 h-4" />;
       case "experience": return <Briefcase className="w-4 h-4" />;
       case "contact": return <Mail className="w-4 h-4" />;
