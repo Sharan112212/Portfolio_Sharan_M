@@ -63,8 +63,6 @@ function DockItem({ item, activeSection, mouseX }: { item: any; activeSection: s
 }
 
 export function Dock({ activeSection }: { activeSection: string }) {
-  // Persistence touch
-
   const mouseX = useMotionValue(Infinity);
 
   return (
