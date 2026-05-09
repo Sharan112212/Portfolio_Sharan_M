@@ -81,35 +81,38 @@ export function Contact({ onVisible }: { onVisible: () => void }) {
 
         {/* Contact Form */}
         <GlassCard>
-           <form className="space-y-4" onSubmit={handleSubmit}>
+           <form className="space-y-4 relative z-20" onSubmit={handleSubmit}>
               <div>
                 <input 
                   type="text" 
+                  name="subject"
                   required
                   placeholder="Subject Identifier"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-3 text-sm focus:outline-none focus:border-neon-blue/50 transition-colors placeholder:text-white/20"
+                  className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-3 text-sm focus:outline-none focus:border-neon-blue/50 transition-colors placeholder:text-white/20 relative z-30 pointer-events-auto"
                 />
               </div>
               <div>
                 <input 
                   type="email" 
+                  name="email"
                   required
                   placeholder="Return Path (Email)"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-3 text-sm focus:outline-none focus:border-neon-blue/50 transition-colors placeholder:text-white/20"
+                  className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-3 text-sm focus:outline-none focus:border-neon-blue/50 transition-colors placeholder:text-white/20 relative z-30 pointer-events-auto"
                 />
               </div>
               <div>
                 <textarea 
+                  name="message"
                   required
                   placeholder="Transmission Payload (Message)"
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-4 text-sm focus:outline-none focus:border-neon-blue/50 transition-colors placeholder:text-white/20 resize-none"
+                  className="w-full bg-white/5 border border-white/5 rounded-2xl px-6 py-4 text-sm focus:outline-none focus:border-neon-blue/50 transition-colors placeholder:text-white/20 resize-none relative z-30 pointer-events-auto"
                 />
               </div>
 

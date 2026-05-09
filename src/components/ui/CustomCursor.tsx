@@ -52,6 +52,9 @@ export function CustomCursor() {
         * {
           cursor: none !important;
         }
+        input, textarea, [contenteditable="true"] {
+          cursor: text !important;
+        }
       `}</style>
 
       {/* Main Glass Orb */}
