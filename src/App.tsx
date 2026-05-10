@@ -1,5 +1,5 @@
-import { motion, useScroll, useSpring } from "motion/react";
-import { useState } from "react";
+import { motion, useScroll, useSpring, AnimatePresence } from "motion/react";
+import { useState, useEffect } from "react";
 import { CustomCursor } from "./components/ui/CustomCursor";
 import { Hero } from "./components/sections/Hero";
 import { About } from "./components/sections/About";
@@ -12,9 +12,11 @@ import { Footer } from "./components/layout/Footer";
 import { Dock } from "./components/navigation/Dock";
 import { DynamicIsland } from "./components/navigation/DynamicIsland";
 import { BackgroundCanvas } from "./components/canvas/BackgroundCanvas";
+import { Preloader } from "./components/ui/Preloader";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("hero");
+  const [isLoading, setIsLoading] = useState(true);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -22,8 +24,22 @@ export default function App() {
     restDelta: 0.001
   });
 
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isLoading]);
+
   return (
     <div className="relative min-h-screen selection:bg-neon-blue/30 selection:text-black">
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <Preloader key="preloader" onLoadingComplete={() => setIsLoading(false)} />
+        )}
+      </AnimatePresence>
+
       <CustomCursor />
       {/* 3D Background */}
       <div className="fixed inset-0 z-0">
@@ -42,7 +58,12 @@ export default function App() {
       />
 
       {/* Main Content */}
-      <main className="relative z-10">
+      <motion.main 
+        className="relative z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isLoading ? 0 : 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
         <Hero onVisible={() => setActiveSection("hero")} />
         <About onVisible={() => setActiveSection("about")} />
         <Skills onVisible={() => setActiveSection("skills")} />
@@ -51,10 +72,10 @@ export default function App() {
         <Experience onVisible={() => setActiveSection("experience")} />
         <Contact onVisible={() => setActiveSection("contact")} />
         <Footer />
-      </main>
+      </motion.main>
 
       {/* Floating Dock Navigation */}
-      <Dock activeSection={activeSection} />
+      {!isLoading && <Dock activeSection={activeSection} />}
     </div>
   );
 }
