@@ -27,7 +27,7 @@ export function Hero({ onVisible }: { onVisible: () => void }) {
         <div className="flex flex-wrap items-center justify-center gap-4">
           <button 
             onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-            className="px-8 py-3 bg-white text-black rounded-full font-medium transition-transform hover:scale-105 active:scale-95"
+            className="px-8 py-3 bg-white/90 backdrop-blur-lg border border-white/50 text-black rounded-full font-medium transition-all hover:scale-105 active:scale-95 shadow-[0_4px_24px_-1px_rgba(255,255,255,0.1)] hover:bg-white hover:shadow-[0_8px_32px_rgba(255,255,255,0.2)]"
           >
             View Projects
           </button>
